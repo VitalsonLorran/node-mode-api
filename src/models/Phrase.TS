@@ -1,11 +1,11 @@
 import { Model, DataTypes } from "sequelize";
-import { sequelize } from '../instances/pg'
+import { sequelize } from '../instances/mysql'
 
 
 export interface PhraseInstance extends Model {
-    id: number
-    author: string
-    txt: string
+    id: number,
+    author: string,
+    txt: string,
 }
 
 export const Phrase = sequelize.define<PhraseInstance>('Phrase', {
@@ -15,10 +15,10 @@ export const Phrase = sequelize.define<PhraseInstance>('Phrase', {
         type: DataTypes.INTEGER
     },
     author: {
-        type: DataTypes.STRING
+        type: DataTypes.INTEGER
     },
     txt: {
-        type: DataTypes.STRING
+        type: DataTypes.INTEGER
     }
 }, {
     tableName: 'phrases',

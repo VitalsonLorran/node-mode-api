@@ -7,9 +7,8 @@ import cors from 'cors' //cors é usado para outros sites acessarem sua api
 dotenv.config()
 
 const server = express()
-server.use(cors({ //se nao colocar parametro nenhum, qualquer site pode acessar: origin: '*'
-    origin: '*'
-}))
+
+//server.use(cors())//se nao colocar parametro nenhum, qualquer site pode acessar: origin: '*'
 
 server.use(express.static(path.join(__dirname, '../public')))
 server.use(express.urlencoded({extended: true}))

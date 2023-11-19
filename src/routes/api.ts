@@ -23,7 +23,8 @@ const upload = multer({
         cb(null, allowed.includes( file.mimetype))
         
         console.log("INFORMACOES", file)
-    }
+    },
+    //limits: { fieldSize: 5000000}
 })
 
 const router = Router() 
